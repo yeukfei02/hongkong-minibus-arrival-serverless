@@ -4,7 +4,7 @@ Hong Kong Minibus Arrival Api in aws lambda
 
 documentation: <https://documenter.getpostman.com/view/3827865/Uyr5pL4d>
 
-api url: <>
+api url: <https://ymoczz3eyd.execute-api.ap-southeast-1.amazonaws.com/prod>
 
 ## Requirement
 
