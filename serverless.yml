@@ -47,6 +47,22 @@ functions:
           path: /route-stop
           method: get
           cors: true
+  
+  busStop:
+    handler: src/busStop/handler.busStop
+    events:
+      - http:
+          path: /bus-stop
+          method: get
+          cors: true
+
+  stopRoute:
+    handler: src/stopRoute/handler.stopRoute
+    events:
+      - http:
+          path: /stop-route
+          method: get
+          cors: true
 
 plugins:
   - serverless-offline
