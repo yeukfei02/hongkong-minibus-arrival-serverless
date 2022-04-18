@@ -1,0 +1,84 @@
+org: yeukfei05
+app: hongkong-minibus-arrival-serverless
+service: hongkong-minibus-arrival-serverless
+
+frameworkVersion: "3"
+useDotenv: true
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: prod
+  region: ap-southeast-1
+  apiName: hongkong-minibus-arrival-serverless-prod
+  tracing:
+    apiGateway: true
+    lambda: true
+  environment:
+    NODE_ENV: production
+  apiGateway:
+    shouldStartNameWithService: true
+    description: hongkong minibus arrival serverless prod
+  lambdaHashingVersion: 20201221
+  architecture: arm64
+  timeout: 30
+
+functions:
+  allRoute:
+    handler: src/allRoute/handler.allRoute
+    events:
+      - http:
+          path: /route
+          method: get
+          cors: true
+
+  busRoute:
+    handler: src/busRoute/handler.busRoute
+    events:
+      - http:
+          path: /bus-route
+          method: get
+          cors: true
+
+  routeStop:
+    handler: src/routeStop/handler.routeStop
+    events:
+      - http:
+          path: /route-stop
+          method: get
+          cors: true
+  
+  busStop:
+    handler: src/busStop/handler.busStop
+    events:
+      - http:
+          path: /bus-stop
+          method: get
+          cors: true
+
+  stopRoute:
+    handler: src/stopRoute/handler.stopRoute
+    events:
+      - http:
+          path: /stop-route
+          method: get
+          cors: true
+
+  routeStopArrival:
+    handler: src/routeStopArrival/handler.routeStopArrival
+    events:
+      - http:
+          path: /route-stop-arrival
+          method: get
+          cors: true
+
+  busStopArrival:
+    handler: src/busStopArrival/handler.busStopArrival
+    events:
+      - http:
+          path: /bus-stop-arrival
+          method: get
+          cors: true
+
+plugins:
+  - serverless-offline
