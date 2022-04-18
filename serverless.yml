@@ -1,6 +1,6 @@
 org: yeukfei05
-app: hongkong-minibus-arrival-serverless
-service: hongkong-minibus-arrival-serverless
+app: hk-minibus-arrival-serverless
+service: hk-minibus-arrival-serverless
 
 frameworkVersion: "3"
 useDotenv: true
@@ -10,7 +10,7 @@ provider:
   runtime: nodejs14.x
   stage: prod
   region: ap-southeast-1
-  apiName: hongkong-minibus-arrival-serverless-prod
+  apiName: hk-minibus-arrival-serverless-prod
   tracing:
     apiGateway: true
     lambda: true
@@ -18,7 +18,7 @@ provider:
     NODE_ENV: production
   apiGateway:
     shouldStartNameWithService: true
-    description: hongkong minibus arrival serverless prod
+    description: hk minibus arrival serverless prod
   lambdaHashingVersion: 20201221
   architecture: arm64
   timeout: 30
