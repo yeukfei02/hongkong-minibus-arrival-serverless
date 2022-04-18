@@ -64,5 +64,21 @@ functions:
           method: get
           cors: true
 
+  routeStopArrival:
+    handler: src/routeStopArrival/handler.routeStopArrival
+    events:
+      - http:
+          path: /route-stop-arrival
+          method: get
+          cors: true
+
+  busStopArrival:
+    handler: src/busStopArrival/handler.busStopArrival
+    events:
+      - http:
+          path: /bus-stop-arrival
+          method: get
+          cors: true
+
 plugins:
   - serverless-offline
