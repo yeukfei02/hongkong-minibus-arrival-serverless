@@ -1,28 +1,31 @@
 const { allRouteRequest } = require("../../api/allRoute");
 
 module.exports.allRoute = async (event) => {
+  console.log("### allRoute ###");
+  console.log("event.queryStringParameters = ", event.queryStringParameters);
+
   let response = {};
 
-  let allRoute = [];
+  let allRoutes = [];
 
   if (event.queryStringParameters) {
     const { region } = event.queryStringParameters;
     if (region) {
-      allRoute = await allRouteRequest(region);
+      allRoutes = await allRouteRequest(region);
     }
   } else {
-    allRoute = await allRouteRequest();
+    allRoutes = await allRouteRequest();
   }
-
-  console.log("allRoute = ", allRoute);
 
   response = {
     statusCode: 200,
     body: JSON.stringify({
       message: "getAllRoute",
-      allRoute: allRoute,
+      allRoute: allRoutes,
     }),
   };
+
+  console.log("response = ", response);
 
   return response;
 };

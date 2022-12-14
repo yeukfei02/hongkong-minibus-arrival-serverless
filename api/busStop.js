@@ -10,8 +10,6 @@ module.exports.busStopRequest = async (stopId) => {
     const response = await axios.get(`${rootUrl}/stop/${stopId}`);
     if (response) {
       const responseData = response.data;
-      console.log("responseData = ", responseData);
-
       if (responseData) {
         busStop = responseData.data;
       }

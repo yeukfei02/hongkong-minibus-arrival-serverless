@@ -1,13 +1,15 @@
 const { busRouteRequest } = require("../../api/busRoute");
 
 module.exports.busRoute = async (event) => {
+  console.log("### busRoute ###");
+  console.log("event.queryStringParameters = ", event.queryStringParameters);
+
   let response = {};
 
   if (event.queryStringParameters) {
     const { region, routeStr } = event.queryStringParameters;
     if (region && routeStr) {
       const busRoute = await busRouteRequest(region, routeStr);
-      console.log("busRoute = ", busRoute);
 
       response = {
         statusCode: 200,
@@ -25,6 +27,8 @@ module.exports.busRoute = async (event) => {
       };
     }
   }
+
+  console.log("response = ", response);
 
   return response;
 };

@@ -13,8 +13,6 @@ module.exports.routeStopRequest = async (routeId) => {
     );
     if (response) {
       const responseData = response.data;
-      console.log("responseData = ", responseData);
-
       if (responseData) {
         routeStop = responseData.data.route_stops;
       }

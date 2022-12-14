@@ -9,7 +9,7 @@ api url: <https://ymoczz3eyd.execute-api.ap-southeast-1.amazonaws.com/prod>
 ## Requirement
 
 - install yarn
-- install node (v14+)
+- install node (v16+)
 - install serverless
 
 ## Testing and run
@@ -24,8 +24,11 @@ $ yarn run deploy
 // open serverless dashboard
 $ yarn run dashboard
 
-// use eslint and prettier to format code
+// lint code
 $ yarn run lint
+
+// format code
+$ yarn run format
 
 // run test case
 $ yarn run test
