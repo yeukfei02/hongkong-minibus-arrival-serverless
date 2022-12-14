@@ -1,13 +1,15 @@
 const { routeStopRequest } = require("../../api/routeStop");
 
 module.exports.routeStop = async (event) => {
+  console.log("### routeStop ###");
+  console.log("event.queryStringParameters = ", event.queryStringParameters);
+
   let response = {};
 
   if (event.queryStringParameters) {
     const { routeId } = event.queryStringParameters;
     if (routeId) {
       const routeStop = await routeStopRequest(routeId);
-      console.log("routeStop = ", routeStop);
 
       response = {
         statusCode: 200,
@@ -25,6 +27,8 @@ module.exports.routeStop = async (event) => {
       };
     }
   }
+
+  console.log("response = ", response);
 
   return response;
 };

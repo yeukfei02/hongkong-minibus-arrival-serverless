@@ -15,8 +15,6 @@ module.exports.allRouteRequest = async (region) => {
 
   if (response) {
     const responseData = response.data;
-    console.log("responseData = ", responseData);
-
     if (responseData) {
       allRoute = responseData.data;
     }

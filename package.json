@@ -26,6 +26,7 @@
     "dashboard": "serverless dashboard",
     "remove": "serverless remove",
     "lint": "eslint . --quiet --fix",
+    "format": "prettier --write '**/*.js'",
     "test": "jest",
     "commit": "git-cz",
     "release": "standard-version",

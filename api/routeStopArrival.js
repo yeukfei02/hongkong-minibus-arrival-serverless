@@ -12,8 +12,6 @@ module.exports.routeStopArrivalRequest = async (routeId, stopId) => {
     );
     if (response) {
       const responseData = response.data;
-      console.log("responseData = ", responseData);
-
       if (responseData) {
         routeStopArrival = responseData.data;
       }

@@ -10,8 +10,6 @@ module.exports.busRouteRequest = async (region, routeStr) => {
     const response = await axios.get(`${rootUrl}/route/${region}/${routeStr}`);
     if (response) {
       const responseData = response.data;
-      console.log("responseData = ", responseData);
-
       if (responseData) {
         busRoute = responseData.data;
       }

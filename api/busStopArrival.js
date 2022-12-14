@@ -10,8 +10,6 @@ module.exports.busStopArrivalRequest = async (stopId) => {
     const response = await axios.get(`${rootUrl}/eta/stop/${stopId}`);
     if (response) {
       const responseData = response.data;
-      console.log("responseData = ", responseData);
-
       if (responseData) {
         busStopArrival = responseData.data;
       }

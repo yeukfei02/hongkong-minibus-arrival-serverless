@@ -46,7 +46,7 @@ functions:
           path: /route-stop
           method: get
           cors: true
-  
+
   busStop:
     handler: src/busStop/handler.busStop
     events:

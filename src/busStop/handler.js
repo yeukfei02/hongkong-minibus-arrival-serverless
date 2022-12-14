@@ -1,13 +1,15 @@
 const { busStopRequest } = require("../../api/busStop");
 
 module.exports.busStop = async (event) => {
+  console.log("### busStop ###");
+  console.log("event.queryStringParameters = ", event.queryStringParameters);
+
   let response = {};
 
   if (event.queryStringParameters) {
     const { stopId } = event.queryStringParameters;
     if (stopId) {
       const busStop = await busStopRequest(stopId);
-      console.log("busStop = ", busStop);
 
       response = {
         statusCode: 200,
@@ -25,6 +27,8 @@ module.exports.busStop = async (event) => {
       };
     }
   }
+
+  console.log("response = ", response);
 
   return response;
 };

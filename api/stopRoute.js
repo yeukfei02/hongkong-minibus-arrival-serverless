@@ -10,8 +10,6 @@ module.exports.stopRouteRequest = async (stopId) => {
     const response = await axios.get(`${rootUrl}/stop-route/${stopId}`);
     if (response) {
       const responseData = response.data;
-      console.log("responseData = ", responseData);
-
       if (responseData) {
         stopRoute = responseData.data;
       }
