@@ -16,6 +16,8 @@ provider:
     lambda: true
   environment:
     NODE_ENV: production
+    MY_AWS_ACCESS_KEY: ${param:MY_AWS_ACCESS_KEY}
+    MY_AWS_SECRET_ACCESS_KEY: ${param:MY_AWS_SECRET_ACCESS_KEY}
   apiGateway:
     shouldStartNameWithService: true
     description: hk minibus arrival serverless prod
@@ -23,6 +25,17 @@ provider:
   timeout: 30
 
 functions:
+  # minibusBusStopListScheduleJob:
+  #   handler: src/minibusBusStopListScheduleJob/handler.minibusBusStopListScheduleJob
+  #   events:
+  #     # - http:
+  #     #     path: /minibus-bus-stop-list-schedule-job
+  #     #     method: get
+  #     #     cors: true
+  #     - schedule: cron(0 1 1 * ? *)
+  #   timeout: 900
+  #   memorySize: 10000
+
   allRoute:
     handler: src/allRoute/handler.allRoute
     events:
