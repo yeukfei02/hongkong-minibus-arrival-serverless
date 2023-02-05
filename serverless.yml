@@ -52,6 +52,14 @@ functions:
           method: get
           cors: true
 
+  busStopList:
+    handler: src/busStopList/handler.busStopList
+    events:
+      - http:
+          path: /bus-stop-list
+          method: get
+          cors: true
+
   routeStop:
     handler: src/routeStop/handler.routeStop
     events:
