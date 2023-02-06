@@ -13,7 +13,7 @@ const { busRouteRequest } = require("../../api/busRoute");
 
 const HongkongMinibusBusRoute = require("../../model/hongkongMinibusBusRoute");
 
-module.exports.minibusBusRouteListScheduleJob = async () => {
+module.exports.minibusBusRoutesScheduleJob = async () => {
   const hongkongMinibusBusRoute = await HongkongMinibusBusRoute.scan()
     .all()
     .exec();
