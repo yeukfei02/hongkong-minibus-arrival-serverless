@@ -23,6 +23,7 @@ provider:
     description: hk minibus arrival serverless prod
   architecture: arm64
   timeout: 30
+  memorySize: 2000
 
 functions:
   minibusBusRoutesScheduleJob:
