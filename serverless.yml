@@ -25,6 +25,17 @@ provider:
   timeout: 30
 
 functions:
+  minibusBusRouteListScheduleJob:
+      handler: src/minibusBusRouteListScheduleJob/handler.minibusBusRouteListScheduleJob
+      events:
+        # - http:
+        #     path: /minibus-bus-route-list-schedule-job
+        #     method: get
+        #     cors: true
+        - schedule: cron(0 1 1 * ? *)
+      timeout: 900
+      memorySize: 10000
+
   # minibusBusStopListScheduleJob:
   #   handler: src/minibusBusStopListScheduleJob/handler.minibusBusStopListScheduleJob
   #   events:
@@ -97,6 +108,14 @@ functions:
     events:
       - http:
           path: /bus-stop-arrival
+          method: get
+          cors: true
+
+  getBusRouteByRouteId:
+    handler: src/getBusRouteByRouteId/handler.getBusRouteByRouteId
+    events:
+      - http:
+          path: /bus-route/{routeId}
           method: get
           cors: true
 

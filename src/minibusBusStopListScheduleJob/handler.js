@@ -17,8 +17,6 @@ const { busStopRequest } = require("../../api/busStop");
 const HongkongMinibusBusStop = require("../../model/hongkongMinibusBusStop");
 
 module.exports.minibusBusStopListScheduleJob = async () => {
-  let response = {};
-
   const hongkongMinibusBusStop = await HongkongMinibusBusStop.scan()
     .all()
     .exec();
@@ -108,6 +106,13 @@ module.exports.minibusBusStopListScheduleJob = async () => {
       }
     }
   }
+
+  const response = {
+    statusCode: 200,
+    body: JSON.stringify({
+      message: "minibusBusStopListScheduleJob",
+    }),
+  };
 
   return response;
 };
