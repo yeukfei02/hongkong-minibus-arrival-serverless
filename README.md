@@ -1,6 +1,6 @@
 # hongkong-minibus-arrival-serverless
 
-Hong Kong Minibus Arrival Api in aws lambda
+Hong Kong Minibus Arrival Api in aws lambda (香港小巴到站時間Api)
 
 documentation: <https://documenter.getpostman.com/view/3827865/Uyr5pL4d>
 
